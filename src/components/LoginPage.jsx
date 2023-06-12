@@ -51,7 +51,7 @@ const LoginPage = () => {
         setResponseText(data);
       } else {
         console.log("Error occurred with the request");
-        alert("Username or email wrong!");
+        alert("Username or password wrong!");
       }
     } catch (error) {
       console.log("Generic error occurred", error);

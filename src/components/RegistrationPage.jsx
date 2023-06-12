@@ -63,7 +63,7 @@ const RegistrationPage = () => {
         setRegistrationCompleted(true);
       } else {
         console.log("Error occurred with the request");
-        alert("error");
+        alert("All rows are required!");
       }
     } catch (error) {
       console.log("Generic error occurred", error);
