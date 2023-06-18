@@ -5,11 +5,9 @@ import {
   Container,
   Row,
   Col,
-  Form,
   Button,
   Spinner,
   ListGroup,
-  Badge,
 } from "react-bootstrap";
 
 const LoginPage = () => {
@@ -72,12 +70,9 @@ const LoginPage = () => {
       ) : responseText ? (
         <Row>
           <Col xs={10} md={6} className="mx-auto mb-4">
-            <h1 className="text-white my-2">User Page</h1>
-            <h3 className="text-white my-5">
-              Bellow you have your token! Check our API documentation for
-              further details!
-            </h3>
-            <ListGroup class="border border-success rounded">
+            <h1 className="text-white my-5">User Page</h1>
+            <h3 className="text-white my-3">Bellow you have your token!</h3>
+            <ListGroup className="border border-success rounded">
               <ListGroup.Item className="fw-bold text-white bg-black py-2">
                 Username
               </ListGroup.Item>
@@ -101,6 +96,12 @@ const LoginPage = () => {
                 {responseText.tokenType}
               </ListGroup.Item>
             </ListGroup>
+            <Link to="/doc" className="nav-link">
+              <h3 className="text-white my-2">
+                {" "}
+                Check our API documentation for further details!
+              </h3>
+            </Link>
             <Link to="/" className="nav-link">
               <Button variant="success" className="text-white bg-dark my-3">
                 Go to login page
@@ -110,38 +111,36 @@ const LoginPage = () => {
         </Row>
       ) : (
         <Row>
-          <Col xs={10} md={6} className="mx-auto mb-4">
-            <div className="login-box">
-              <h1 className="my-3 text-white">Login Page</h1>
-              <form>
-                <div className="user-box">
-                  <input
-                    type="text"
-                    name=""
-                    value={username}
-                    onChange={handleUserNameChange}
-                    required
-                  />
-                  <label>Username</label>
-                </div>
-                <div className="user-box">
-                  <input
-                    type="password"
-                    name=""
-                    value={password}
-                    onChange={handlePasswordChange}
-                    required
-                  />
-                  <label>Password</label>
-                </div>
-                <center>
-                  <a className="color-white" onClick={handleSubmit}>
-                    LOGIN
-                    <span></span>
-                  </a>
-                </center>
-              </form>
-            </div>
+          <Col xs={8} md={6} lg={5} xl={4} xxl={4} className="mb-4 login-box">
+            <h1 className="my-3 text-white">Login Page</h1>
+            <form>
+              <div className="user-box">
+                <input
+                  type="text"
+                  name=""
+                  value={username}
+                  onChange={handleUserNameChange}
+                  required
+                />
+                <label>Username</label>
+              </div>
+              <div className="user-box">
+                <input
+                  type="password"
+                  name=""
+                  value={password}
+                  onChange={handlePasswordChange}
+                  required
+                />
+                <label>Password</label>
+              </div>
+              <center>
+                <a className="color-white" onClick={handleSubmit}>
+                  LOGIN
+                  <span></span>
+                </a>
+              </center>
+            </form>
           </Col>
         </Row>
       )}

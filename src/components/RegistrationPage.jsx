@@ -74,62 +74,61 @@ const RegistrationPage = () => {
   return (
     <Container className="py-5">
       <Row>
-        <Col xs={10} md={6} className="mx-auto mb-4">
-          <div className="login-box">
-            <h1 className="my-3 text-white">Registration Page</h1>
-            <form>
-              <div className="user-box">
-                <input
-                  type="text"
-                  name=""
-                  value={name}
-                  onChange={handleNameChange}
-                  required
-                />
-                <label>Name</label>
-              </div>
-              <div className="user-box">
-                <input
-                  type="text"
-                  name=""
-                  value={lastName}
-                  onChange={handleLastNameChange}
-                  required
-                />
-                <label>Lastname</label>
-              </div>
-              <div className="user-box">
-                <input
-                  type="text"
-                  name=""
-                  value={username}
-                  onChange={handleUserNameChange}
-                  required
-                />
-                <label>Username</label>
-              </div>
-              <div className="user-box">
-                <input
-                  type="email"
-                  name=""
-                  value={email}
-                  onChange={handleEmailChange}
-                  required
-                />
-                <label>@Email</label>
-              </div>
-              <div className="user-box">
-                <input
-                  type="password"
-                  name=""
-                  value={password}
-                  onChange={handlePasswordChange}
-                  required
-                />
-                <label>Password</label>
-              </div>
+        <Col xs={8} md={6} lg={5} xl={4} xxl={3} className="mb-4 login-box">
+          <h1 className="my-3 text-white">Registration Page</h1>
+          <form>
+            <div className="user-box">
+              <input
+                type="text"
+                name=""
+                value={name}
+                onChange={handleNameChange}
+                required
+              />
+              <label>Name</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="text"
+                name=""
+                value={lastName}
+                onChange={handleLastNameChange}
+                required
+              />
+              <label>Lastname</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="text"
+                name=""
+                value={username}
+                onChange={handleUserNameChange}
+                required
+              />
+              <label>Username</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="email"
+                name=""
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+              <label>@Email</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="password"
+                name=""
+                value={password}
+                onChange={handlePasswordChange}
+                required
+              />
+              <label>Password</label>
+            </div>
 
-              {/*  <Form onSubmit={handleSubmit}>
+            {/*  <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="name" required>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -175,28 +174,27 @@ const RegistrationPage = () => {
                 onChange={handlePasswordChange}
               />
                 </Form.Group>*/}
-              {registrationCompleted ? (
-                <Link to="/login-page" className="nav-link">
-                  <center>
-                    <a className="text-white">
-                      Go to login page
-                      <span></span>
-                    </a>
-                  </center>
-                </Link>
-              ) : (
+            {registrationCompleted ? (
+              <Link to="/login-page" className="nav-link">
                 <center>
-                  <a className="text-white" onClick={handleSubmit}>
-                    REGISTER
+                  <a className="text-white">
+                    Go to login page
                     <span></span>
                   </a>
                 </center>
-              )}
-            </form>
-            <Link to="/login-page" className="nav-link">
-              <div className="text-secondary">Already registered? Login!</div>
-            </Link>
-          </div>
+              </Link>
+            ) : (
+              <center>
+                <a className="text-white" onClick={handleSubmit}>
+                  REGISTER
+                  <span></span>
+                </a>
+              </center>
+            )}
+          </form>
+          <Link to="/login-page" className="nav-link">
+            <div className="text-secondary">Already registered? Login!</div>
+          </Link>
         </Col>
       </Row>
     </Container>
